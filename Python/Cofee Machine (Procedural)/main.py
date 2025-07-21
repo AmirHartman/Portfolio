@@ -42,6 +42,11 @@ def process_coins():
 
 users_pick = ''
 
+print("_________________________________________________________________________________________")
+print("For developers: type 'report' to see the resources in the machine   (hidden from user)")
+print("_________________________________________________________________________________________\n\n")
+print("Welcome to the coffee machine! \nPlease select your drink, or type 'off' to turn off the machine")
+
 while users_pick != 'off':
     users_pick = input("“What would you like? (espresso/latte/cappuccino): ").lower()
     if users_pick == 'report':
