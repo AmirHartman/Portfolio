@@ -1,0 +1,24 @@
+full information:
+server is written in java and the client is written in c++.
+to run the program regularly, no debugging this is what i need to write in the terminal:
+
+step 1: compile and open the server and the client:
+for client (path: root@0d9faf9d32b5:/workspaces/SPL_ex3)
+cd ./client
+make
+./bin/StompEMIClient
+
+server:
+cd ./server
+mvn compile
+mvn exec:java -Dexec.mainClass="bgu.spl.net.impl.stomp.StompServer" -Dexec.args="7777 reactor"
+
+step 2: command in the terminal to test the actual program
+login 127.0.0.1 7777 yam 123 // login command
+join police // subscribe to channel police
+report {file_path} // sends the events in the json file that the path was given to
+
+what should happen:
+lets say clients dan, jay and ben are subscribed to channel police. dan reports (report command) on a few events to channel police. both jay and dan should recieve those reports as message frames
+
+problem: dan sends the reports sucessfullt but ben and jay dont recieve them. 
